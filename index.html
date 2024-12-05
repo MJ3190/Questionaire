@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalLift Marketing Questionnaire</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e8f5e9; /* Light green background */
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 150px;
+            /* Placeholder for your logo */
+            background-color: #388e3c; /* Green background */
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+        }
+        .logo::before {
+            content: "LocalLift";
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            color: #388e3c; /* Dark Green */
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            resize: vertical;
+            font-size: 16px;
+        }
+        textarea::placeholder,
+        input::placeholder {
+            color: #888;
+        }
+        button {
+            background-color: #388e3c; /* Green */
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2e7d32; /* Darker Green */
+        }
+        .required {
+            color: red;
+        }
+        /* Progress Bar Styles */
+        #progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            height: 20px;
+        }
+        #progress {
+            width: 0%;
+            height: 100%;
+            background-color: #388e3c;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo Placeholder -->
+    <div class="logo"></div>
+    
+    <h2>LocalLift Marketing Questionnaire</h2>
+    
+    <!-- Progress Bar -->
+    <div id="progress-bar">
+        <div id="progress"></div>
+    </div>
+    
+    <form id="questionnaire-form" action="https://formspree.io/f/xeoqdzqo" method="POST">
+        <!-- Personal Background -->
+        <div class="form-group">
+            <label for="about-yourself">1. Can you tell me a little about yourself? <span class="required">*</span></label>
+            <textarea id="about-yourself" name="about-yourself" rows="3" required placeholder="e.g., I'm Jake, a 16-year-old high school student..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="motivation">2. Why did you decide to start a lawn care business? <span class="required">*</span></label>
+            <textarea id="motivation" name="motivation" rows="3" required placeholder="e.g., I love working outdoors and wanted to help my neighbors..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="enjoyment">3. What do you enjoy most about cutting grass and maintaining lawns? <span class="required">*</span></label>
+            <textarea id="enjoyment" name="enjoyment" rows="3" required placeholder="e.g., Seeing the transformation of a yard and making clients happy..."></textarea>
+        </div>
+
+        <!-- Business Operations -->
+        <div class="form-group">
+            <label for="experience">4. How long have you been providing lawn care services?</label>
+            <input type="text" id="experience" name="experience" placeholder="e.g., Two summers">
+        </div>
+
+        <div class="form-group">
+            <label for="clients">5. How many clients do you serve each month?</label>
+            <input type="number" id="clients" name="clients" min="0" placeholder="e.g., 27">
+        </div>
+
+        <div class="form-group">
+            <label for="services">6. What specific services do you offer (e.g., mowing, trimming, weeding, fertilizing)? <span class="required">*</span></label>
+            <textarea id="services" name="services" rows="3" required placeholder="e.g., Mowing, edging, trimming, eco-friendly fertilizing..."></textarea>
+        </div>
+
+        <!-- Customer Relations -->
+        <div class="form-group">
+            <label for="appreciation">7. What do your clients appreciate most about your service?</label>
+            <textarea id="appreciation" name="appreciation" rows="3" placeholder="e.g., Punctuality, attention to detail, friendly attitude..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="testimonials">8. Do you have any testimonials or feedback from clients that you’d like to share?</label>
+            <textarea id="testimonials" name="testimonials" rows="3" placeholder="e.g., 'Jake did an amazing job on our lawn...'"></textarea>
+        </div>
+
+        <!-- Marketing and Promotion -->
+        <div class="form-group">
+            <label for="new-clients">9. How do you currently find new clients?</label>
+            <textarea id="new-clients" name="new-clients" rows="3" placeholder="e.g., Word-of-mouth, flyers, social media..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="unique">10. What sets your lawn care service apart from others?</label>
+            <textarea id="unique" name="unique" rows="3" placeholder="e.g., Eco-friendly products, exceptional customer service..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="promotions">11. Do you offer any special promotions or discounts?</label>
+            <textarea id="promotions" name="promotions" rows="3" placeholder="e.g., Seasonal discounts, referral bonuses..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="social-media">12. Have you used social media or other online platforms to promote your services? If so, which ones?</label>
+            <textarea id="social-media" name="social-media" rows="3" placeholder="e.g., Instagram, Facebook, a personal website..."></textarea>
+        </div>
+
+        <!-- Goals and Aspirations -->
+        <div class="form-group">
+            <label for="future">13. Where do you see your lawn care business in the next year?</label>
+            <textarea id="future" name="future" rows="3" placeholder="e.g., Expanding client base, adding new services..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="new-services">14. Are there any new services you’d like to offer in the future?</label>
+            <textarea id="new-services" name="new-services" rows="3" placeholder="e.g., Landscaping, seasonal clean-ups..."></textarea>
+        </div>
+
+        <!-- Preferences and Style -->
+        <div class="form-group">
+            <label for="style">15. Do you have a particular style or approach to lawn care?</label>
+            <textarea id="style" name="style" rows="3" placeholder="e.g., Sustainable practices, meticulous mowing techniques..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="branding">16. Are there any colors, themes, or symbols you associate with your business?</label>
+            <textarea id="branding" name="branding" rows="3" placeholder="e.g., Green and white colors, leaf symbol..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="eco-friendly">17. Do you use any special equipment or eco-friendly practices?</label>
+            <textarea id="eco-friendly" name="eco-friendly" rows="3" placeholder="e.g., Electric mowers, organic fertilizers..."></textarea>
+        </div>
+
+        <!-- Additional Insights -->
+        <div class="form-group">
+            <label for="challenges">18. What challenges have you faced in running your lawn care business, and how did you overcome them?</label>
+            <textarea id="challenges" name="challenges" rows="3" placeholder="e.g., Managing busy seasons, handling client expectations..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="motivation-busy">19. How do you stay motivated during the busy summer months?</label>
+            <textarea id="motivation-busy" name="motivation-busy" rows="3" placeholder="e.g., Enjoying long days outdoors, pride in community..."></textarea>
+        </div>
+
+        <!-- Fun and Engaging Questions -->
+        <div class="form-group">
+            <label for="memorable">20. Do you have any funny or memorable experiences from working with clients?</label>
+            <textarea id="memorable" name="memorable" rows="3" placeholder="e.g., A client’s surprise party setup..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="favorite-tool">21. What’s your favorite tool or piece of equipment for lawn care?</label>
+            <input type="text" id="favorite-tool" name="favorite-tool" placeholder="e.g., My trusty mower">
+        </div>
+
+        <div class="form-group">
+            <label for="additional-service">22. If you could offer one additional service to your clients, what would it be and why?</label>
+            <textarea id="additional-service" name="additional-service" rows="3" placeholder="e.g., Garden design services to enhance their yards..."></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Progress Bar Script -->
+<script>
+    const form = document.getElementById('questionnaire-form');
+    const progress = document.getElementById('progress');
+
+    form.addEventListener('input', updateProgress);
+
+    function updateProgress() {
+        const totalFields = form.querySelectorAll('textarea, input').length;
+        const filledFields = form.querySelectorAll('textarea:not(:empty), input:not(:empty)').length;
+        const percentage = Math.round((filledFields / totalFields) * 100);
+        progress.style.width = percentage + '%';
+    }
+</script>
+
+</body>
+</html>
